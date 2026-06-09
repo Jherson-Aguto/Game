@@ -24,3 +24,4 @@ chmod +x scripts/setup_folders.sh
 ./scripts/setup_folders.sh
 ```
 # Game
+# Game
