@@ -1,121 +1,72 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
+import StatusPanel from './ui/components/StatusPanel'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
+    <div className="arena-dashboard">
+      <header className="dashboard-header">
+        <div className="logo-container">
+          <div className="logo-glow"></div>
+          <h1 className="logo-text">NODE<span className="accent-text">STRIKE</span></h1>
         </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
-          </p>
+        <div className="system-indicator">
+          <span className="sys-status-badge">ARENA DEPLOYMENT</span>
+          <span className="sys-version">V0.1.0 // PRE-ALPHA</span>
         </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+      </header>
 
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
+      <main className="dashboard-content">
+        <div className="dashboard-grid">
+          <div className="main-panel-section">
+            <StatusPanel />
+          </div>
+          
+          <div className="info-panel-section">
+            <div className="cyber-card">
+              <div className="card-header">
+                <h4>ARENA PROTOCOL OVERVIEW</h4>
+              </div>
+              <div className="card-body">
+                <p>
+                  Welcome to <strong>NODESTRIKE: Arena Protocol</strong>. This dashboard represents 
+                  the core operations interface for verifying local server node health.
+                </p>
+                <div className="bullet-points">
+                  <div className="bullet-item">
+                    <span className="bullet-icon">▸</span>
+                    <span><strong>Phase 1:</strong> Establishing standard health check & CORS policy (Active).</span>
+                  </div>
+                  <div className="bullet-item">
+                    <span className="bullet-icon">▸</span>
+                    <span><strong>Phase 2:</strong> Matchmaking and real-time state synchronization via WebSocket (Pending).</span>
+                  </div>
+                  <div className="bullet-item">
+                    <span className="bullet-icon">▸</span>
+                    <span><strong>Phase 3:</strong> 3D Combat simulation inside WebGL combat rooms (Scheduled).</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="cyber-card console-card">
+              <div className="card-header">
+                <h4>DIAGNOSTIC TERMINAL</h4>
+              </div>
+              <div className="card-body console-body font-mono">
+                <div className="console-line text-dim">&gt; Initializing systems connection...</div>
+                <div className="console-line text-dim">&gt; Fetching status from environment VITE_BACKEND_URL...</div>
+                <div className="console-line text-highlight">&gt; System check sequence completed. Status updated automatically.</div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+      </main>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+      <footer className="dashboard-footer">
+        <span className="footer-left">PROTOCOL TERMINAL // ACTIVE_LINK_VERIFICATION</span>
+        <span className="footer-right">© 2026 NODESTRIKE INC. ALL RIGHTS RESERVED.</span>
+      </footer>
+    </div>
   )
 }
 
